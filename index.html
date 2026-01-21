@@ -8,54 +8,116 @@
 </head>
 <body>
 
-<section>
-    <div class="bento-container">
-
-        <!-- Big box spanning 2 columns x 2 rows -->
-        <section class="bento-section wide" style="display: table">
-            <!--height so hoch dass es im Kasten zentriert ausschaut-->
-            <!--border-radius macht die runden Ecken (50% wäre ein Kreis)-->
-            <img src="./WLS_Robotics.jpeg" height="220px" style="float: left; padding: 10px; border-radius: 30%">
-            <h1 style="float: left; font-size: 4em; padding-left: 25px; margin-top: 40px; margin-bottom: 0">WLS<br>Robotics</h1>
+<!-- Text & Video nebeneinander -->
+<section style="display: flex; flex-direction: row;">
+    <section class="bento-container">
+        <!-- Flexbox damit der Titel nur so viel platz verbraucht wie nötig-->
+        <section style="display: flex; flex-direction: row; grid-column: span 4">
+            <!-- noch eine Flexbox damit Bild und Titel nebeneinander im selben Kasten sind -->
+            <div class="bento-section"
+                 style="display: flex; flex-direction: row; background-color: rgba(144,48,239,0.5); border: 5px solid #5c0bce; width: fit-content; margin-right: 10px">
+                <!--border-radius macht die runden Ecken (50% wäre ein Kreis)-->
+                <img src="media/WLS_Robotics.jpeg" height="120px" style="float: left; border-radius: 30%;">
+                <h1 style="font-size: 60px; padding-left: 15px; margin: 0;">WLS<br>Robotics
+                </h1>
+            </div>
+            <div class="bento-section">
+                <p>Links & QR goes here!</p>
+            </div>
         </section>
 
-
-        <section class="bento-section big">
-            <h2>About Us</h2>
+        <!-- tatsächlicher Content ab hier-->
+        <div class="bento-section big">
+            <h2><strong>Wer sind wir?</strong></h2>
+            <p style="color: orange">Der Text muss kurz und knapp sein, sodass man im vorbeilaufen ihn lesen kann!</p>
             <p>WLS robotics formed in early
-            2021, as Prof. Dr. Stefan May of the OHM university stumbled across an extracurricular technology course
-            offered by our school, the WLS, and decided to lend support and introduce the world of robotics.<br><br>We
-            lay focus on creating simple and easy-to-maintain educational robots using ROS, micro-ROS, EduArt's drive
-            system and off-the-shelf electronics, with the goal of acquiring and passing on the skills and knowledge
-            required to work on mobile platforms, be it mechanics, electronics, software or just plain old
-            troubleshooting.</p>
-        </section>
+                2021, as Prof. Dr. Stefan May of the OHM university stumbled across an extracurricular technology course
+                offered by our school, the WLS, and decided to lend support and introduce the world of robotics.<br><br>We
+                lay focus on creating simple and easy-to-maintain educational robots using ROS, micro-ROS, EduArt's
+                drive
+                system and off-the-shelf electronics, with the goal of acquiring and passing on the skills and knowledge
+                required to work on mobile platforms, be it mechanics, electronics, software or just plain old
+                troubleshooting.</p>
+        </div>
 
-        <section class="bento-section tall">Tall Box for QR Codes</section>
-
-        <section class="bento-section"><h1>KA was hier hin kommt</h1></section>
-
-        <section class="bento-section">
+        <div class="bento-section">
             <p>This is Zyklop, our initial robot. It was our first real
-            experience with ROS and professional robotics.<br><br>Zyklop is great at navigating rough terrain but has a
-            deficit of sensors.</p>
-        </section>
+                experience with ROS and professional robotics.<br><br>Zyklop is great at navigating rough terrain but
+                has a
+                deficit of sensors.</p>
+        </div>
 
-        <section class="bento-section">
+        <div class="bento-section">
             <p>Bento-Box was the second addition to our robot family. It was be
-            used at the Robocup in Bordeaux.<br><br>We chose the name mostly so that we can call it the bento \'Box\',
-            but also because we presume it\'ll end up looking like a box, since this happened with Zyklop.</p>
-        </section>
+                used at the Robocup in Bordeaux.<br><br>We chose the name mostly so that we can call it the bento
+                \'Box\',
+                but also because we presume it\'ll end up looking like a box, since this happened with Zyklop.</p>
+        </div>
 
-        <section class="bento-section">
+        <div class="bento-section">
             <p>Bento-Box really struggles at climbing ledges and stairs. As
-            EduArt offered us new hardware, we decided to try out a flipper-based robot, naming it Schäufele.<br><br>We
-            are still learning how to make articulated tracks behave nicely, so Schäufele can be difficult at
-            times.</p>
-        </section>
-    </div>
+                EduArt offered us new hardware, we decided to try out a flipper-based robot, naming it
+                Schäufele.<br><br>We
+                are still learning how to make articulated tracks behave nicely, so Schäufele can be difficult at
+                times.</p>
+        </div>
+    </section>
+
+    <!-- Video slideshow Dingsbums -->
+    <section
+            style=" display: flex; width: 60%; background-color: #000000; border: 5px solid #CE0B27; border-radius: 16px;">
+        <video class="slides" muted width="100%">
+            <source src="media/align%20IRL.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/bentobox%20erster%20test%20am%20robocup%202023.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/bentobox%20fortgeschritten.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/bentobox%20tuer%20aufmachen.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/happy.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/qr%20codes%20lesen.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/schaeufele%20erster%20test.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/schaeufele%20treppengoat.mp4">
+        </video>
+        <video class="slides" muted width="100%">
+            <source src="media/VID-20230704-WA0007.mp4">
+        </video>
+    </section>
 
 </section>
-
 </body>
+
+<!-- Javascript für den slideshow-->
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].currenttime = 0;
+        slides[slideIndex - 1].play();
+        setTimeout(showSlides, slides[slideIndex - 1].duration * 1000);
+    }
+</script>
+
 </html>
