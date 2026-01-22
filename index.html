@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,50 +15,175 @@
         <section class="bento-section wide" style="display: table">
             <!--height so hoch dass es im Kasten zentriert ausschaut-->
             <!--border-radius macht die runden Ecken (50% wäre ein Kreis)-->
-            <img src="./Images/WLS_Robotics.jpeg" height="220px" style="float: left; padding: 10px; border-radius: 30%">
+            <img src="./Images/WLS_Robotics.jpeg" height="270px" style="float: left; padding: 10px; border-radius: 33%">
             <h1 style="float: left; font-size: 4em; padding-left: 25px; margin-top: 40px; margin-bottom: 0">WLS<br>Robotics</h1>
         </section>
 
 
         <section class="bento-section big">
-            <h2>About Us</h2>
-            <p>WLS robotics formed in early
-            2021, as Prof. Dr. Stefan May of the OHM university stumbled across an extracurricular technology course
-            offered by our school, the WLS, and decided to lend support and introduce the world of robotics.<br><br>We
-            lay focus on creating simple and easy-to-maintain educational robots using ROS, micro-ROS, EduArt's drive
-            system and off-the-shelf electronics, with the goal of acquiring and passing on the skills and knowledge
-            required to work on mobile platforms, be it mechanics, electronics, software or just plain old
-            troubleshooting.</p>
+
+
+<div class="slideshow-container"style="margin-top:0rem">   <!--hier Slideshow elemente hinzufügen-->
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid1.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid2.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid3.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid4.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid5.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid6.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid7.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid8.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<div class="mySlides fade">
+    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+        <source src="./Images/Vid9.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+
+</div>
+
+<br>
+
+<div style="text-align:center"> <!--hier so viele dots wie elemente-->
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+</script>
+
+
         </section>
 
-        <section class="bento-section tall">Tall Box for QR Codes</section>
+        <section class="bento-section tall">
+            <h1>WER SIND WIR?</h1>
+            <p style="margin-top: 0rem; line-height: 1.5;"><b>WLS Robotics</b> wurde Anfang 2021 gegründet, als <b>Prof. Dr. Stefan May</b> von der OHM-Hochschule auf einen außerschulischen Technik-Kurs stieß, der an unserer Schule, der <b>Wilhelm-Löhe-Schule</b>, angeboten wurde, und beschloss, diesen zu unterstützen und die Welt der Robotik einzuführen.</p>
+            <div style="text-align: center;">
+                <a href="https://loeheschule.de/>" class="logo1">
+                    <img src="./Images/QRCode%20WLS.png">
+                </a>
+                <a href="https://github.com/Bento-Robotics" class = "logo2">
+                    <img src="./Images/QRCode%20Github.png">
+                </a>
+                <h1 style="float: left; margin-left:60px; margin-top:0px;">
+                    WLS
+                </h1>
+                <h1 style="float: right; margin-right:30px; margin-top:0px;">
+                    GitHub
+                </h1>
 
-        <section class="bento-section"><h1>KA was hier hin kommt</h1></section>
+
+
+
+
+            </div>
+
+        </section>
 
         <section class="bento-section">
             <div style="text-align: center;">
-                <img src="./Images/zyklop.jpg" height="90%" width="90%" style="border-radius: 10px">
-            </div>
-            <div style="text-align: center;">
-                <p><b>Zyklop</b>, unser erster Roboter</p>
+                <img src="./Images/WLS%20Logo.jpg" width="250rem"  height="250rem" style="border-radius: 1rem">
             </div>
         </section>
 
         <section class="bento-section">
             <div style="text-align: center;">
-                <img src="./Images/zyklop.jpg" height="90%" width="90%" style="border-radius: 10px">
+                <img src="./Images/zyklop.jpg"  width="90%" style="border-radius: 1rem">
             </div>
-            <div style="text-align: center;">
-                <p>Bento-Box</p>
+            <div style="text-align: center; margin-top: 0rem;">
+                <p><b>Zyklop</b></p>
             </div>
         </section>
 
         <section class="bento-section">
             <div style="text-align: center;">
-                <img src="./Images/Schaeufele.jpg" height="90%" width="90%" style="border-radius: 10px">
+                <img src="./Images/zyklop.jpg"  width="90%" style="border-radius: 1rem">
             </div>
+            <div style="text-align: center; margin-top: 0rem;">
+                <p><b>Bento-Box</b></p>
+            </div>
+        </section>
+
+        <section class="bento-section">
             <div style="text-align: center;">
-                <p>Schäufele mit Flippern zum Treppensteigen</p>
+                <img src="./Images/Schaeufele.jpg" width="90%" style="border-radius: 1rem">
+            </div>
+            <div style="text-align: center; margin-top: 0rem;">
+                <p><b>Schäufele</b></p>
             </div>
         </section>
     </div>
