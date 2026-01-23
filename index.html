@@ -26,62 +26,62 @@
 <div class="slideshow-container"style="margin-top:0rem">   <!--hier Slideshow elemente hinzufügen-->
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid1.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid2.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid3.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid4.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid5.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid6.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid7.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid8.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
 </div>
 
 <div class="mySlides fade">
-    <video autoplay muted loop style="width:100%; border-radius: 1rem;">
+    <video autoplay muted style="width:100%; border-radius: 1rem;">
         <source src="./Images/Vid9.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
@@ -92,7 +92,7 @@
 
 <br>
 
-<div style="text-align:center"> <!--hier so viele dots wie elemente-->
+<div style="text-align:center; position: relative; top: -3rem;"> <!--hier so viele dots wie elemente-->
   <span class="dot"></span>
   <span class="dot"></span>
   <span class="dot"></span>
@@ -106,25 +106,37 @@
 
 <script>
 let slideIndex = 0;
-showSlides();
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
+function showSlide(index) {
+  // Alle Slides ausblenden & Videos stoppen
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
+    let video = slides[i].querySelector("video");
+    video.pause();
+    video.currentTime = 0;
+    dots[i].classList.remove("active");
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 5000); // Change image every 2 seconds
+
+  // Aktuellen Slide anzeigen
+  slides[index].style.display = "block";
+  dots[index].classList.add("active");
+
+  let currentVideo = slides[index].querySelector("video");
+  currentVideo.play();
+
+  // Wenn Video fertig → nächster Slide
+  currentVideo.onended = () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  };
 }
+
+// Start
+showSlide(slideIndex);
 </script>
+
 
 
         </section>
@@ -132,6 +144,12 @@ function showSlides() {
         <section class="bento-section tall">
             <h1>WER SIND WIR?</h1>
             <p style="margin-top: 0rem; line-height: 1.5;"><b>WLS Robotics</b> wurde Anfang 2021 gegründet, als <b>Prof. Dr. Stefan May</b> von der OHM-Hochschule auf einen außerschulischen Technik-Kurs stieß, der an unserer Schule, der <b>Wilhelm-Löhe-Schule</b>, angeboten wurde, und beschloss, diesen zu unterstützen und die Welt der Robotik einzuführen.</p>
+            <div style="text-align: center; float:bottom;">
+                <img src="./Images/team.jpg" width="100%" height="100%" style="border-radius: 1rem">
+            </div>
+        </section>
+
+        <section class="bento-section">
             <div style="text-align: center;">
                 <a href="https://loeheschule.de/>" class="logo1">
                     <img src="./Images/QRCode%20WLS.png">
@@ -139,24 +157,12 @@ function showSlides() {
                 <a href="https://github.com/Bento-Robotics" class = "logo2">
                     <img src="./Images/QRCode%20Github.png">
                 </a>
-                <h1 style="float: left; margin-left:60px; margin-top:0px;">
+                <h1 style="float: left; margin-left:60px; margin-top:1rem;">
                     WLS
                 </h1>
-                <h1 style="float: right; margin-right:30px; margin-top:0px;">
+                <h1 style="float: right; margin-right:30px; margin-top:1rem;">
                     GitHub
                 </h1>
-
-
-
-
-
-            </div>
-
-        </section>
-
-        <section class="bento-section">
-            <div style="text-align: center;">
-                <img src="./Images/WLS%20Logo.jpg" width="250rem"  height="250rem" style="border-radius: 1rem">
             </div>
         </section>
 
